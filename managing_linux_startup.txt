@@ -1,0 +1,116 @@
+# change to /boot directory
+
+# command lines to remember : >: and their effects
+
+CTRL+ALT+T Open Terminal
+
+
+>: cd /boot
+
+george@staembed01:/boot$ ls
+
+
+george@staembed01:/boot$ ls
+config-5.3.0-42-generic      memtest86+.elf
+config-5.3.0-45-generic      memtest86+_multiboot.bin
+grub                         System.map-5.3.0-42-generic
+initrd.img-5.3.0-42-generic  System.map-5.3.0-45-generic
+initrd.img-5.3.0-45-generic  vmlinuz-5.3.0-42-generic
+memtest86+.bin               vmlinuz-5.3.0-45-generic
+
+
+george@staembed01:/boot$ cd grub
+george@staembed01:/boot/grub$ ls
+fonts  gfxblacklist.txt  grub.cfg  grubenv  i386-pc  locale  unicode.pf2
+
+>: less grub.cfg
+
+>: less etc/default/grub
+
+
+george@staembed01:~$ ls /etc/
+acpi                    ifplugd              polkit-1
+adduser.conf            ImageMagick-6        popularity-contest.conf
+alternatives            init                 ppp
+anacrontab              init.d               profile
+apg.conf                initramfs-tools      profile.d
+apm                     inputrc              protocols
+apparmor                insserv.conf.d       pulse
+apparmor.d              iproute2             python2.7
+apport                  issue                python3
+appstream.conf          issue.net            python3.6
+apt                     java-11-openjdk      rc0.d
+avahi                   java-8-openjdk       rc1.d
+bash.bashrc             kernel               rc2.d
+bash_completion         kernel-img.conf      rc3.d
+bash_completion.d       kerneloops.conf      rc4.d
+bindresvport.blacklist  ldap                 rc5.d
+binfmt.d                ld.so.cache          rc6.d
+bluetooth               ld.so.conf           rcS.d
+brlapi.key              ld.so.conf.d         resolvconf
+brltty                  legal                resolv.conf
+brltty.conf             libao.conf           rmt
+ca-certificates         libaudit.conf        rpc
+ca-certificates.conf    libblockdev          rsyslog.conf
+calendar                libnl-3              rsyslog.d
+chatscripts             libpaper.d           sane.d
+console-setup           libreoffice          securetty
+cracklib                lintianrc            security
+cron.d                  locale.alias         selinux
+cron.daily              locale.gen           sensors3.conf
+cron.hourly             localtime            sensors.d
+cron.monthly            logcheck             services
+crontab                 login.defs           shadow
+cron.weekly             logrotate.conf       shadow-
+cups                    logrotate.d          shells
+cupshelpers             lsb-release          skel
+dbus-1                  ltrace.conf          speech-dispatcher
+dconf                   lvm                  ssh
+debconf.conf            machine-id           ssl
+debian_version          magic                subgid
+default                 magic.mime           subgid-
+deluser.conf            mailcap              subuid
+depmod.d                mailcap.order        subuid-
+dhcp                    manpath.config       sudoers
+dictionaries-common     mc                   sudoers.d
+dpkg                    mime.types           sysctl.conf
+emacs                   mke2fs.conf          sysctl.d
+environment             modprobe.d           systemd
+firefox                 modules              terminfo
+fonts                   modules-load.d       thermald
+fstab                   mtab                 thunderbird
+fuse.conf               mtools.conf          timezone
+fwupd                   nanorc               tmpfiles.d
+gai.conf                netbeans.clusters    ucf.conf
+gdb                     netbeans.conf        udev
+gdm3                    netbeans.import      udisks2
+geoclue                 netplan              ufw
+ghostscript             network              updatedb.conf
+glvnd                   networkd-dispatcher  update-manager
+gnome                   NetworkManager       update-motd.d
+groff                   networks             update-notifier
+group                   newt                 UPower
+group-                  nsswitch.conf        usb_modeswitch.conf
+grub.d                  opt                  usb_modeswitch.d
+gshadow                 os-release           vdpau_wrapper.cfg
+gshadow-                PackageKit           vim
+gss                     pam.conf             vtrgb
+gtk-2.0                 pam.d                wgetrc
+gtk-3.0                 papersize            whoopsie
+hdparm.conf             passwd               wpa_supplicant
+host.conf               passwd-              X11
+hostname                pcmcia               xdg
+hosts                   perl                 xml
+hosts.allow             pki                  zsh_command_not_found
+hosts.deny              pm
+hp                      pnm2ppa.conf
+
+
+george@staembed01:~$ ls /etc/grub.d
+00_header        10_linux      20_memtest86+  30_uefi-firmware  41_custom
+05_debian_theme  20_linux_xen  30_os-prober   40_custom         README
+
+# get the current run level of the Linux operating system
+george@staembed01:~$ systemctl get-default
+graphical.target
+
