@@ -1,0 +1,120 @@
+george@staembed01:~$ ls /
+bin  boot  cdrom  dev  etc  home  initrd.img  initrd.img.old  lib  lib64  lost+found  media  mnt  opt  proc  root  run  sbin  snap  srv  sys  tmp  usr  var  VBox.log  vmlinuz  vmlinuz.old
+george@staembed01:~$ ls sys
+ls: cannot access 'sys': No such file or directory
+george@staembed01:~$ cd sys
+bash: cd: sys: No such file or directory
+george@staembed01:~$ cd /sys
+george@staembed01:/sys$ ls
+block  bus  class  dev  devices  firmware  fs  hypervisor  kernel  module  power
+george@staembed01:/sys$ ls block
+dm-0  loop0  loop10  loop12  loop14  loop16  loop18  loop2   loop21  loop23  loop25  loop3  loop5  loop7  loop9  sr0
+dm-1  loop1  loop11  loop13  loop15  loop17  loop19  loop20  loop22  loop24  loop26  loop4  loop6  loop8  sda
+george@staembed01:/sys$ ls sda
+ls: cannot access 'sda': No such file or directory
+george@staembed01:/sys$ ls /sda
+ls: cannot access '/sda': No such file or directory
+george@staembed01:/sys$ cd /sda
+bash: cd: /sda: No such file or directory
+george@staembed01:/sys$ ls /sda/
+ls: cannot access '/sda/': No such file or directory
+george@staembed01:/sys$ pwd
+/sys
+george@staembed01:/sys$ ls
+block  bus  class  dev  devices  firmware  fs  hypervisor  kernel  module  power
+george@staembed01:/sys$ cd /block
+bash: cd: /block: No such file or directory
+george@staembed01:/sys$ ls /block
+ls: cannot access '/block': No such file or directory
+george@staembed01:/sys$ ls block
+dm-0  loop0  loop10  loop12  loop14  loop16  loop18  loop2   loop21  loop23  loop25  loop3  loop5  loop7  loop9  sr0
+dm-1  loop1  loop11  loop13  loop15  loop17  loop19  loop20  loop22  loop24  loop26  loop4  loop6  loop8  sda
+george@staembed01:/sys$ ls block/sda
+alignment_offset  capability  device             events        events_poll_msecs  hidden   inflight   mq     queue  removable  sda1  slaves  subsystem  uevent
+bdi               dev         discard_alignment  events_async  ext_range          holders  integrity  power  range  ro         size  stat    trace
+george@staembed01:/sys$ cat block/sda/size
+524288000
+george@staembed01:/sys$ pwd
+/sys
+george@staembed01:/sys$ cd /block
+bash: cd: /block: No such file or directory
+george@staembed01:/sys$ cd /
+george@staembed01:/$ ls
+bin  boot  cdrom  dev  etc  home  initrd.img  initrd.img.old  lib  lib64  lost+found  media  mnt  opt  proc  root  run  sbin  snap  srv  sys  tmp  usr  var  VBox.log  vmlinuz  vmlinuz.old
+george@staembed01:/$ cd proc
+george@staembed01:/proc$ ls proc
+ls: cannot access 'proc': No such file or directory
+george@staembed01:/proc$ pwd
+/proc
+george@staembed01:/proc$ ls
+1     1239  1335  139   1428  148   1561  17    1778  1841  1885  2020  2301  252   27    3132  39   497  6    814  875        bus          fs           loadavg       schedstat      uptime
+10    1250  1338  1391  143   15    1564  1702  1785  1843  1887  2037  2303  254   2741  317   390  513  603  815  9          cgroups      interrupts   locks         scsi           version
+1000  1252  1341  1394  1430  152   157   1707  1789  1844  1894  2048  2314  255   28    318   4    519  605  819  906        cmdline      iomem        mdstat        self           version_signature
+1066  1254  1343  1396  1433  153   16    1709  1797  1851  191   2061  2352  257   2818  32    40   521  627  820  907        consoles     ioports      meminfo       slabinfo       vmallocinfo
+1067  1260  135   1397  1436  1534  160   172   18    1855  1916  2081  2360  259   2860  33    403  526  630  846  942        cpuinfo      irq          misc          softirqs       vmstat
+11    1267  1352  1398  1441  1537  1669  1727  1805  1862  192   2084  2391  2596  2898  34    41   544  653  848  954        crypto       kallsyms     modules       stat           zoneinfo
+1195  1275  136   14    1445  1538  167   1733  1815  1863  1929  21    24    26    29    35    414  546  656  850  957        devices      kcore        mounts        swaps
+1196  1282  137   140   1446  154   1670  1738  1819  1869  1942  2104  2417  260   2966  355   417  552  659  852  963        diskstats    keys         mtrr          sys
+12    1287  1378  141   1457  155   1674  1749  1823  1872  1951  2173  2460  2611  2992  36    42   581  660  853  986        dma          key-users    net           sysrq-trigger
+1211  1289  138   1413  146   1551  1676  1761  1828  1876  1995  22    250   2621  3     37    441  588  669  854  989        driver       kmsg         pagetypeinfo  sysvipc
+1217  1293  1381  142   1464  1555  1681  1765  1832  1877  2     2265  2504  2672  30    38    454  590  696  857  acpi       execdomains  kpagecgroup  partitions    thread-self
+1229  1294  1382  1424  147   1557  1683  1767  1836  1878  20    2267  2505  2674  3063  381   455  591  812  867  asound     fb           kpagecount   pressure      timer_list
+1238  13    1388  1426  1470  156   1696  1769  1840  1883  2010  23    251   2685  3074  383   477  594  813  869  buddyinfo  filesystems  kpageflags   sched_debug   tty
+george@staembed01:/proc$ cat version
+Linux version 5.3.0-45-generic (buildd@lcy01-amd64-027) (gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04)) #37~18.04.1-Ubuntu SMP Fri Mar 27 15:58:10 UTC 2020
+george@staembed01:/proc$ cat version_signature 
+Ubuntu 5.3.0-45.37~18.04.1-generic 5.3.18
+george@staembed01:/proc$ cat partitions
+major minor  #blocks  name
+
+   7        0     223012 loop0
+   7        1      15104 loop1
+   7        2      55952 loop2
+   7        3       4300 loop3
+   7        4       4360 loop4
+   7        5      45960 loop5
+   7        6       3736 loop6
+   7        7     182100 loop7
+  11        0    1048575 sr0
+   8        0  262144000 sda
+   8        1  262141952 sda1
+ 253        0  261107712 dm-0
+ 253        1     999424 dm-1
+   7        8      49456 loop8
+   7        9        132 loop9
+   7       10      15100 loop10
+   7       11      17596 loop11
+   7       12     222936 loop12
+   7       13        956 loop13
+   7       14       7916 loop14
+   7       15     215156 loop15
+   7       16     189264 loop16
+   7       17      96032 loop17
+   7       18     163996 loop18
+   7       19     146340 loop19
+   7       20     146196 loop20
+   7       21      93560 loop21
+   7       22      56264 loop22
+   7       23       3772 loop23
+   7       24        956 loop24
+   7       25     444804 loop25
+   7       26     182304 loop26
+george@staembed01:/proc$ cd /
+george@staembed01:/$ ls
+bin  boot  cdrom  dev  etc  home  initrd.img  initrd.img.old  lib  lib64  lost+found  media  mnt  opt  proc  root  run  sbin  snap  srv  sys  tmp  usr  var  VBox.log  vmlinuz  vmlinuz.old
+george@staembed01:/$ ls dev
+autofs           dm-0       hwrng     loop13  loop24        mcelog              ptmx      snd     tty14  tty25  tty36  tty47  tty58      ttyS1   ttyS20  ttyS31     userio     vcsa2  vfio
+block            dm-1       i2c-0     loop14  loop25        mem                 pts       sr0     tty15  tty26  tty37  tty48  tty59      ttyS10  ttyS21  ttyS4      vboxguest  vcsa3  vga_arbiter
+bsg              dri        initctl   loop15  loop26        memory_bandwidth    random    stderr  tty16  tty27  tty38  tty49  tty6       ttyS11  ttyS22  ttyS5      vboxuser   vcsa4  vhci
+btrfs-control    dvd        input     loop16  loop3         mqueue              rfkill    stdin   tty17  tty28  tty39  tty5   tty60      ttyS12  ttyS23  ttyS6      vcs        vcsa5  vhost-net
+bus              ecryptfs   kmsg      loop17  loop4         net                 rtc       stdout  tty18  tty29  tty4   tty50  tty61      ttyS13  ttyS24  ttyS7      vcs1       vcsa6  vhost-vsock
+cdrom            fb0        lightnvm  loop18  loop5         network_latency     rtc0      tty     tty19  tty3   tty40  tty51  tty62      ttyS14  ttyS25  ttyS8      vcs2       vcsu   zero
+char             fd         log       loop19  loop6         network_throughput  sda       tty0    tty2   tty30  tty41  tty52  tty63      ttyS15  ttyS26  ttyS9      vcs3       vcsu1  zfs
+console          full       loop0     loop2   loop7         null                sda1      tty1    tty20  tty31  tty42  tty53  tty7       ttyS16  ttyS27  ubuntu-vg  vcs4       vcsu2
+core             fuse       loop1     loop20  loop8         nvram               sg0       tty10   tty21  tty32  tty43  tty54  tty8       ttyS17  ttyS28  udmabuf    vcs5       vcsu3
+cpu_dma_latency  hidraw0    loop10    loop21  loop9         port                sg1       tty11   tty22  tty33  tty44  tty55  tty9       ttyS18  ttyS29  uhid       vcs6       vcsu4
+cuse             hpet       loop11    loop22  loop-control  ppp                 shm       tty12   tty23  tty34  tty45  tty56  ttyprintk  ttyS19  ttyS3   uinput     vcsa       vcsu5
+disk             hugepages  loop12    loop23  mapper        psaux               snapshot  tty13   tty24  tty35  tty46  tty57  ttyS0      ttyS2   ttyS30  urandom    vcsa1      vcsu6
+george@staembed01:/$ cd dev
+george@staembed01:/dev$ cd /
+george@staembed01:/$ 
